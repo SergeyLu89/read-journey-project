@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/read-journey-project/static/css/main.abb0ea20.css",
+    "main.js": "/read-journey-project/static/js/main.07d3183d.js",
+    "static/media/Gilroy-Medium.ttf": "/read-journey-project/static/media/Gilroy-Medium.f9f832b0ed3f1ab138c9.ttf",
+    "static/media/Gilroy-Bold.ttf": "/read-journey-project/static/media/Gilroy-Bold.b900325e44ec0c673e88.ttf",
+    "index.html": "/read-journey-project/index.html",
+    "main.abb0ea20.css.map": "/read-journey-project/static/css/main.abb0ea20.css.map",
+    "main.07d3183d.js.map": "/read-journey-project/static/js/main.07d3183d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.abb0ea20.css",
+    "static/js/main.07d3183d.js"
+  ]
+}
