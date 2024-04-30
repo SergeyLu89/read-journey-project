@@ -1,6 +1,6 @@
 // import css from './RecommendedPage.module.css';
 
 const RecommendedPage = () => {
-  return <></>;
+  return <>RECOMMENDED PAGE</>;
 };
 export default RecommendedPage;

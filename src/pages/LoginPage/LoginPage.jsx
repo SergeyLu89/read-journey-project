@@ -1,6 +1,6 @@
 // import css from './LoginPage.module.css';
 
 const LoginPage = () => {
-  return <></>;
+  return <>LOGIN PAGE</>;
 };
 export default LoginPage;

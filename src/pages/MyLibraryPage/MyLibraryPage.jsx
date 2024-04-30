@@ -1,6 +1,6 @@
 // import css from './MyLibraryPage.module.css'
 
 const MyLibraryPage = () => {
-  return <></>;
+  return <>MY LIBRARY PAGE</>;
 };
 export default MyLibraryPage;

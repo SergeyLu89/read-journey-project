@@ -1,6 +1,6 @@
 // import css from './ReadingPage.module.css'
 
 const ReadingPage = () => {
-  return <></>;
+  return <>READING PAGE</>;
 };
 export default ReadingPage;
