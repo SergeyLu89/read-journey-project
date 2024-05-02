@@ -4,6 +4,9 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
 
+import { registerThunk } from '../../../redux/auth/authOperations';
+import { useDispatch } from 'react-redux';
+
 const schema = Yup.object({
   name: Yup.string()
     .required('Name is a required field')
@@ -18,12 +21,20 @@ const schema = Yup.object({
 });
 
 const RegisterForm = () => {
+  const dispatch = useDispatch();
+
   const {
     register,
     handleSubmit,
     formState: { errors, isValid },
+    reset,
   } = useForm({ mode: 'onChange', resolver: yupResolver(schema) });
-  const onSubmit = data => console.log(data);
+
+  const onSubmit = data => {
+    console.log(data);
+    dispatch(registerThunk(data));
+    reset();
+  };
 
   return (
     <>

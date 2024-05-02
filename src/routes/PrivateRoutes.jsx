@@ -18,7 +18,7 @@ const PrivateRoutes = () => {
         <Route path="recommended" element={<RecommendedPage />} />
         <Route path="library" element={<MyLibraryPage />} />
         <Route path="reading" element={<ReadingPage />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<Navigate to="/recommended" replace />} />
       </Route>
     </Routes>
   );

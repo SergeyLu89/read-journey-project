@@ -3,6 +3,8 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { logInThunk } from '../../../redux/auth/authOperations';
 
 const schema = Yup.object({
   email: Yup.string()
@@ -15,12 +17,17 @@ const schema = Yup.object({
 });
 
 const LoginForm = () => {
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
     formState: { errors, isValid },
   } = useForm({ mode: 'onChange', resolver: yupResolver(schema) });
-  const onSubmit = data => console.log(data);
+
+  const onSubmit = data => {
+    console.log(data);
+    dispatch(logInThunk(data));
+  };
 
   return (
     <>
