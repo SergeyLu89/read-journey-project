@@ -1,0 +1,12 @@
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  /* color: var(--main-text-color); */
+}
