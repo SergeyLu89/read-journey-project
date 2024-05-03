@@ -4,7 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
 
-import { registerThunk } from '../../../redux/auth/authOperations';
+import { registerThunk } from '../../../../redux/auth/authOperations';
 import { useDispatch } from 'react-redux';
 
 const schema = Yup.object({

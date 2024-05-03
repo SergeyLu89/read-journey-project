@@ -4,7 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { logInThunk } from '../../../redux/auth/authOperations';
+import { logInThunk } from '../../../../redux/auth/authOperations';
 
 const schema = Yup.object({
   email: Yup.string()
