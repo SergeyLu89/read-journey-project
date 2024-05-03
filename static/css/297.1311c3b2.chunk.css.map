@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/297.1311c3b2.chunk.css","mappings":"AAAA,kCACE,YAAa,CACb,qBACF","sources":["components/AuthForms/RegisterForm/RegisterForm.module.css"],"sourcesContent":[".registerForm {\n  display: flex;\n  flex-direction: column;\n}\n"],"names":[],"sourceRoot":""}
