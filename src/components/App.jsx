@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import RestrictedRoutes from 'routes/RestrictedRoutes';
 import PrivateRoutes from 'routes/PrivateRoutes';
 import { selectAuthIsLoading } from '../redux/auth/authSelectors';
-import { refreshUserThunk } from '../redux/auth/authOperations';
+import { fetchCurrentThunk } from '../redux/auth/authOperations';
 import { useAuth } from 'hooks/useAuth';
 
 export const App = () => {
@@ -13,7 +13,7 @@ export const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(refreshUserThunk());
+    dispatch(fetchCurrentThunk());
     setIsFirstRender(false);
   }, [dispatch]);
 

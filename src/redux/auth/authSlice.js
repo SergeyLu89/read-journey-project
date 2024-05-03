@@ -6,7 +6,7 @@ import {
   registerThunk,
   logInThunk,
   logOutThunk,
-  refreshUserThunk,
+  fetchCurrentThunk,
 } from './authOperations';
 
 const handlePending = state => {
@@ -24,7 +24,8 @@ const initialState = {
     name: null,
     email: null,
   },
-  token: null,
+  accessToken: null,
+  refreshToken: null,
   isLoggedIn: false,
   isRefreshing: false,
   isLoading: false,
@@ -34,35 +35,45 @@ const initialState = {
 export const authSlice = createSlice({
   name: 'auth',
   initialState,
+  reducers: {
+    setTokens(state, { payload }) {
+      state.accessToken = payload.token;
+      state.refreshToken = payload.refreshToken;
+    },
+  },
   extraReducers: builder =>
     builder
-      .addCase(registerThunk.fulfilled, (state, action) => {
+      .addCase(registerThunk.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.user = action.payload.user;
-        state.token = action.payload.token;
+        state.user = { name: payload.name, email: payload.email };
+        state.accessToken = payload.token;
+        state.refreshToken = payload.refreshToken;
         state.isLoggedIn = true;
       })
-      .addCase(logInThunk.fulfilled, (state, action) => {
+      .addCase(logInThunk.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.user = action.payload.user;
-        state.token = action.payload.token;
+        console.log(payload.user);
+        state.user = { name: payload.name, email: payload.email };
+        state.accessToken = payload.token;
+        state.refreshToken = payload.refreshToken;
         state.isLoggedIn = true;
       })
       .addCase(logOutThunk.fulfilled, state => {
         state.isLoading = false;
         state.user = { name: null, email: null };
-        state.token = null;
+        state.accessToken = null;
+        state.refreshToken = null;
         state.isLoggedIn = false;
       })
-      .addCase(refreshUserThunk.pending, state => {
+      .addCase(fetchCurrentThunk.pending, state => {
         state.isRefreshing = true;
       })
-      .addCase(refreshUserThunk.fulfilled, (state, action) => {
-        state.user = action.payload;
+      .addCase(fetchCurrentThunk.fulfilled, (state, { payload }) => {
+        state.user = payload;
         state.isLoggedIn = true;
         state.isRefreshing = false;
       })
-      .addCase(refreshUserThunk.rejected, state => {
+      .addCase(fetchCurrentThunk.rejected, state => {
         state.isRefreshing = false;
       })
       .addMatcher(
@@ -82,7 +93,8 @@ export const authSlice = createSlice({
 const authPersistConfig = {
   key: 'auth',
   storage,
-  whitelist: ['token'],
+  whitelist: ['accessToken', 'refreshToken'],
 };
 
+export const { setTokens } = authSlice.actions;
 export const authReducer = persistReducer(authPersistConfig, authSlice.reducer);
