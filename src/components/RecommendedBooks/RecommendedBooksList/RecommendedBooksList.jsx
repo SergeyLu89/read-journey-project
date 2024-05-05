@@ -2,7 +2,7 @@
 
 import RecommendedBooksItem from '../RecommendedBooksItem/RecommendedBooksItem';
 
-const RecommendedBooks = ({ books }) => {
+const RecommendedBooksList = ({ books }) => {
   return (
     <section>
       <h2>Recommended</h2>
@@ -15,12 +15,11 @@ const RecommendedBooks = ({ books }) => {
         </li>
       </ul>
       <ul>
-        {books.map(book => (
+        {/* {books.map(book => (
           <RecommendedBooksItem book={book} key={book.id} />
-        ))}
-        <li></li>
+        ))} */}
       </ul>
     </section>
   );
 };
-export default RecommendedBooks;
+export default RecommendedBooksList;
