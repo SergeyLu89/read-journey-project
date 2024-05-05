@@ -1,6 +1,6 @@
 // import css from './RecommendedBooksList.module.css';
 
-import RecommendedBooksItem from '../RecommendedBooksItem/RecommendedBooksItem';
+// import RecommendedBooksItem from '../RecommendedBooksItem/RecommendedBooksItem';
 
 const RecommendedBooksList = ({ books }) => {
   return (
