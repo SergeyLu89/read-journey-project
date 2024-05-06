@@ -10,6 +10,7 @@ import {
 } from 'redux-persist';
 
 import { authReducer } from './auth/authSlice';
+import { recommendedReducer } from './books/recommendedBooks/recommendedBooksSlice';
 
 // import { contactsReducer } from './contacts/slice';
 // import { filterReducer } from './filter/slice';
@@ -17,7 +18,7 @@ import { authReducer } from './auth/authSlice';
 export const store = configureStore({
   reducer: {
     auth: authReducer,
-    // contacts: contactsReducer,
+    recommended: recommendedReducer,
     // filter: filterReducer,
   },
   middleware: getDefaultMiddleware =>

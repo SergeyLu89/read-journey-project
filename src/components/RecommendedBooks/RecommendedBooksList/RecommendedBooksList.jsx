@@ -1,6 +1,6 @@
 // import css from './RecommendedBooksList.module.css';
 
-// import RecommendedBooksItem from '../RecommendedBooksItem/RecommendedBooksItem';
+import RecommendedBooksItem from '../RecommendedBooksItem/RecommendedBooksItem';
 
 const RecommendedBooksList = ({ books }) => {
   return (
@@ -15,9 +15,9 @@ const RecommendedBooksList = ({ books }) => {
         </li>
       </ul>
       <ul>
-        {/* {books.map(book => (
-          <RecommendedBooksItem book={book} key={book.id} />
-        ))} */}
+        {books.map(book => (
+          <RecommendedBooksItem book={book} key={book._id} />
+        ))}
       </ul>
     </section>
   );
