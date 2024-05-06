@@ -5,7 +5,7 @@ const favoritesSlice = createSlice({
   name: 'recommended',
   initialState: {
     recommended: [],
-    totalCount: null,
+    totalPages: null,
     isLoading: false,
     error: null,
   },
@@ -19,7 +19,7 @@ const favoritesSlice = createSlice({
         state.isLoading = false;
         state.recommended = payload.results;
         console.log('payload: ', payload);
-        // state.totalCount = payload.length;
+        state.totalPages = payload.totalPages;
       })
       .addCase(getRecommended.rejected, (state, { payload }) => {
         state.isLoading = false;
