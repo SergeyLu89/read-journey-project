@@ -23,7 +23,7 @@ const Functionality = () => {
         </li>
       </ul>
       <Link className={css.functionalityLink} to="/library">
-        Already have an account?
+        My library
       </Link>
     </>
   );
