@@ -13,15 +13,15 @@ import { getRecommended } from '../../../redux/books/recommendedBooks/recommende
 import { useEffect } from 'react';
 import { usePagination } from 'hooks/usePagination';
 import { RecommendedBooksLimit } from 'constants/paginationLimits';
+import { useRecommendedFilter } from 'hooks/useRecommendedFilter';
 
 const RecommendedBooksList = () => {
   const { page, limit, setPage } = usePagination(RecommendedBooksLimit);
+  const { title, author } = useRecommendedFilter();
 
   const dispatch = useDispatch();
   const books = useSelector(selectRecommendedBooks);
   const totalPages = useSelector(selectRecommendedTotalPages);
-  console.log('totalPages: ', totalPages);
-
   const isLoading = useSelector(selectRecommendedIsLoading);
   // const isError = useSelector(selectRecommendedError);
 
@@ -30,16 +30,17 @@ const RecommendedBooksList = () => {
     if (isNaN(parseInt(page)) || page <= 0) validPage = 1;
 
     const searchParams = new URLSearchParams({ page: validPage, limit });
-    dispatch(getRecommended(searchParams));
-  }, [dispatch, page, limit]);
+    if (title) searchParams.set('title', title);
+    if (author) searchParams.set('author', author);
 
-  const booksAreNotFinded = !isLoading && totalPages === 0;
+    dispatch(getRecommended(searchParams));
+  }, [dispatch, page, limit, title, author]);
 
   return (
     <section>
       <h2>Recommended</h2>
       {isLoading && <p>Loading...</p>}
-      {totalPages > 0 && (
+      {totalPages > 0 ? (
         <>
           <Paginator setPage={setPage} page={page} totalPages={totalPages} />
           <ul>
@@ -48,9 +49,9 @@ const RecommendedBooksList = () => {
             ))}
           </ul>
         </>
+      ) : (
+        <p> Nothing found</p>
       )}
-
-      {booksAreNotFinded && <p> EMPTY</p>}
     </section>
   );
 };
