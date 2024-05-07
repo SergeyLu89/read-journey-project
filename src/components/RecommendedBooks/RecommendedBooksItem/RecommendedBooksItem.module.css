@@ -1,0 +1,14 @@
+.modalOpenBtn {
+  width: 137px;
+  height: 208px;
+  border-radius: 8px;
+  border: none;
+  padding: 0;
+  overflow: hidden;
+}
+
+.bookImage {
+  width: 137px;
+  height: 208px;
+  border-radius: 8px;
+}
