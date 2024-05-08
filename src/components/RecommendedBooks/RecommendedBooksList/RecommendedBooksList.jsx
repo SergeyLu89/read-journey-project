@@ -7,7 +7,7 @@ import {
   selectRecommendedBooks,
   selectRecommendedTotalPages,
   selectRecommendedIsLoading,
-  // selectRecommendedError,
+  selectRecommendedError,
 } from '../../../redux/books/recommendedBooks/recommendedBooksSelectors';
 import { getRecommended } from '../../../redux/books/recommendedBooks/recommendedBooksOperations';
 import { useEffect } from 'react';
@@ -23,7 +23,7 @@ const RecommendedBooksList = () => {
   const books = useSelector(selectRecommendedBooks);
   const totalPages = useSelector(selectRecommendedTotalPages);
   const isLoading = useSelector(selectRecommendedIsLoading);
-  // const isError = useSelector(selectRecommendedError);
+  const isError = useSelector(selectRecommendedError);
 
   useEffect(() => {
     let validPage = page;
@@ -38,6 +38,7 @@ const RecommendedBooksList = () => {
 
   return (
     <section>
+      {isError && <p>Oops, something went wrong.</p>}
       <h2>Recommended</h2>
       {isLoading && <p>Loading...</p>}
       {totalPages > 0 ? (

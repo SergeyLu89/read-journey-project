@@ -1,10 +1,13 @@
 import BookInfoComponent from 'components/reUseComponents/BookInfoComponent/BookInfoComponent';
 import css from './RecommendedBooksItem.module.css';
-
 import Modal from 'components/reUseComponents/Modal/Modal';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import UniversalButton from 'components/reUseComponents/UniversalButton/UniversalButton';
+import { addLibraryBooksThunk } from '../../../redux/books/libraryBooks/libraryBooksOperations';
 
 const RecommendedBooksItem = ({ book }) => {
+  const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => {
@@ -14,7 +17,7 @@ const RecommendedBooksItem = ({ book }) => {
     setIsOpen(false);
   };
 
-  const { author, imageUrl, title } = book;
+  const { author, imageUrl, title, _id } = book;
   return (
     <>
       <li>
@@ -28,7 +31,10 @@ const RecommendedBooksItem = ({ book }) => {
       {isOpen && (
         <Modal isOpen={isOpen} closeFnc={closeModal}>
           <BookInfoComponent book={book} />
-          <button type="button">Add to library</button>
+          <UniversalButton
+            title={'Add to library'}
+            btnFunction={() => dispatch(addLibraryBooksThunk(_id))}
+          />
         </Modal>
       )}
     </>
