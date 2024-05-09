@@ -6,7 +6,7 @@ import {
   getLibraryBooksThunk,
   addLibraryBooksThunk,
   removeLibraryBooksThunk,
-  // createLibraryBooksThunk,
+  createLibraryBooksThunk,
 } from './libraryBooksOperations';
 
 const handlePending = state => {
@@ -47,13 +47,28 @@ const libraryBooksSlice = createSlice({
         state.isLoading = false;
         state.totalCount -= 1;
       })
+      .addCase(createLibraryBooksThunk.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.totalCount += 1;
+        state.error = false;
+      })
       .addMatcher(
-        isAnyOf(getLibraryBooksThunk.pending, addLibraryBooksThunk.pending),
+        isAnyOf(
+          getLibraryBooksThunk.pending,
+          addLibraryBooksThunk.pending,
+          removeLibraryBooksThunk.pending,
+          createLibraryBooksThunk.pending
+        ),
         handlePending
       )
 
       .addMatcher(
-        isAnyOf(getLibraryBooksThunk.rejected, addLibraryBooksThunk.rejected),
+        isAnyOf(
+          getLibraryBooksThunk.rejected,
+          addLibraryBooksThunk.rejected,
+          removeLibraryBooksThunk.rejected,
+          createLibraryBooksThunk.rejected
+        ),
         handleRejected
       ),
 });
