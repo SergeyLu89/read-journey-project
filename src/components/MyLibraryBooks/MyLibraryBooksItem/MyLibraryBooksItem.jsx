@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import BookInfoComponent from 'components/reUseComponents/BookInfoComponent/BookInfoComponent';
 import UniversalButton from 'components/reUseComponents/UniversalButton/UniversalButton';
 import { removeLibraryBooksThunk } from '../../../redux/books/libraryBooks/libraryBooksOperations';
+import { defaultImageBookSmallPng } from 'assets/images/defaultImages/defaultImages';
 
 const MyLibraryBooksItem = ({ book }) => {
   const { author, imageUrl, title, _id } = book;
@@ -22,7 +23,11 @@ const MyLibraryBooksItem = ({ book }) => {
     <>
       <li>
         <button type="button" onClick={openModal} className={css.modalOpenBtn}>
-          <img src={imageUrl} alt={title} className={css.bookImage} />
+          <img
+            src={imageUrl ? imageUrl : defaultImageBookSmallPng}
+            alt={title}
+            className={css.bookImage}
+          />
         </button>
 
         <h4>{title}</h4>
