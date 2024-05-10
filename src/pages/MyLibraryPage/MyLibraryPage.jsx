@@ -2,6 +2,7 @@
 
 import MyLibraryForm from 'components/Forms/MyLibraryForm/MyLibraryForm';
 import MyLibraryBooksList from 'components/MyLibraryBooks/MyLibraryBooksList/MyLibraryBooksList';
+import RecommendedBlok from 'components/MyLibraryBooks/RecommendedBlok/RecommendedBlok';
 import Dashboard from 'components/reUseComponents/Dashboard/Dashboard';
 
 const MyLibraryPage = () => {
@@ -9,6 +10,7 @@ const MyLibraryPage = () => {
     <>
       <Dashboard>
         <MyLibraryForm />
+        <RecommendedBlok />
       </Dashboard>
       <MyLibraryBooksList />
     </>
