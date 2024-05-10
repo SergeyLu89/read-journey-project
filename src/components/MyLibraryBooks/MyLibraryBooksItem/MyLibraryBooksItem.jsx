@@ -6,10 +6,12 @@ import BookInfoComponent from 'components/reUseComponents/BookInfoComponent/Book
 import UniversalButton from 'components/reUseComponents/UniversalButton/UniversalButton';
 import { removeLibraryBooksThunk } from '../../../redux/books/libraryBooks/libraryBooksOperations';
 import { defaultImageBookSmallPng } from 'assets/images/defaultImages/defaultImages';
+import { useNavigate } from 'react-router-dom';
 
 const MyLibraryBooksItem = ({ book }) => {
   const { author, imageUrl, title, _id } = book;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => {
@@ -17,6 +19,10 @@ const MyLibraryBooksItem = ({ book }) => {
   };
   const closeModal = () => {
     setIsOpen(false);
+  };
+
+  const handleStartReading = () => {
+    navigate('/reading', { state: { bookId: _id } });
   };
 
   return (
@@ -46,7 +52,7 @@ const MyLibraryBooksItem = ({ book }) => {
           <BookInfoComponent book={book} />
           <UniversalButton
             title={'Start reading'}
-            // btnFunction={() => {}}
+            btnFunction={handleStartReading}
           />
         </Modal>
       )}
