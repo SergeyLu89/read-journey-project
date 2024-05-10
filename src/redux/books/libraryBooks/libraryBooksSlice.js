@@ -48,6 +48,7 @@ const libraryBooksSlice = createSlice({
         state.totalCount -= 1;
       })
       .addCase(createLibraryBooksThunk.fulfilled, (state, { payload }) => {
+        state.libraryBooks = [...state.libraryBooks, payload];
         state.isLoading = false;
         state.totalCount += 1;
         state.error = false;
@@ -73,16 +74,14 @@ const libraryBooksSlice = createSlice({
       ),
 });
 
-const libraryConfig = {
-  key: 'library',
-  storage,
-  whitelist: ['libraryBooks'],
-};
+// const libraryConfig = {
+//   key: 'library',
+//   storage,
+//   whitelist: ['libraryBooks'],
+// };
 
-export const { addBookToLibrary, removeBookFromLibrary } =
-  libraryBooksSlice.actions;
-
-export const libraryReducer = persistReducer(
-  libraryConfig,
-  libraryBooksSlice.reducer
-);
+// export const libraryReducer = persistReducer(
+//   libraryConfig,
+//   libraryBooksSlice.reducer
+// );
+export const libraryReducer = libraryBooksSlice.reducer;
