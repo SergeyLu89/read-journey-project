@@ -1,9 +1,12 @@
 import css from './MyLibraryForm.module.css';
 import { useForm } from 'react-hook-form';
+import { useState } from 'react';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { createLibraryBooksThunk } from '../../../redux/books/libraryBooks/libraryBooksOperations';
+import Modal from 'components/reUseComponents/Modal/Modal';
+import SuccesNotification from 'components/MyLibraryBooks/SuccesNotification/SuccesNotification';
 
 const schema = Yup.object({
   title: Yup.string().required('Book title is a required field'),
@@ -15,6 +18,7 @@ const schema = Yup.object({
 
 const MyLibraryForm = () => {
   const dispatch = useDispatch();
+  const [isOpen, setIsOpen] = useState(false);
 
   const {
     register,
@@ -23,16 +27,24 @@ const MyLibraryForm = () => {
     reset,
   } = useForm({ mode: 'onBlur', resolver: yupResolver(schema) });
 
+  const openModal = () => {
+    setIsOpen(true);
+  };
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
   const onSubmit = async data => {
     try {
       await dispatch(createLibraryBooksThunk(data)).unwrap();
-      alert('Ебать ты молодец');
       reset();
+      openModal();
     } catch (error) {
       console.error(error);
-      alert('Миша, все хуйня! Давай по новой');
+      alert(error.message);
     }
   };
+
   return (
     <div>
       <p>Create your library:</p>
@@ -62,6 +74,11 @@ const MyLibraryForm = () => {
           Add book
         </button>
       </form>
+      {isOpen && (
+        <Modal isOpen={isOpen} closeFnc={closeModal}>
+          <SuccesNotification />
+        </Modal>
+      )}
     </div>
   );
 };
