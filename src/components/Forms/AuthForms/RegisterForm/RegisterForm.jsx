@@ -31,7 +31,6 @@ const RegisterForm = () => {
   } = useForm({ mode: 'onChange', resolver: yupResolver(schema) });
 
   const onSubmit = data => {
-    console.log(data);
     dispatch(registerThunk(data));
     reset();
   };
