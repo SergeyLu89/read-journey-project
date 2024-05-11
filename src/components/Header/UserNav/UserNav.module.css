@@ -4,3 +4,17 @@
   justify-content: center;
   gap: 8px;
 }
+
+.headerNavLink {
+  transition: color var(--general-transition);
+}
+.readingNavLink {
+  display: none;
+}
+.headerNavLink:hover,
+.headerNavLink:focus {
+  color: #4f92f7;
+}
+.active {
+  color: #4f92f7;
+}

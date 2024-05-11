@@ -25,6 +25,16 @@ const UserNav = () => {
             My library
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            to="/reading"
+            className={({ isActive }) =>
+              ` ${isActive ? css.active : css.readingNavLink}`
+            }
+          >
+            My training
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
