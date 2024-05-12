@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/471.34c75e92.chunk.css","mappings":"AAIA,uBACE,qBACF","sources":["components/ReadingBook/Details/Details.module.css"],"sourcesContent":["/* .navLink {\n  background-color: gray;\n} */\n\n.active {\n  background-color: gray;\n}\n"],"names":[],"sourceRoot":""}
