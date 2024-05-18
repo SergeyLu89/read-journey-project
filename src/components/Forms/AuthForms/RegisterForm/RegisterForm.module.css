@@ -1,4 +1,190 @@
+.registerBlok {
+  background-color: var(--main-bg-color);
+  border-radius: 30px;
+  padding: 20px 20px 40px 20px;
+  /* max-width: 335px; */
+}
+.mainTitle {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 100%;
+  letter-spacing: 0.02em;
+}
+.mainTitle span {
+  color: rgba(227, 227, 227, 0.5);
+}
 .registerForm {
   display: flex;
   flex-direction: column;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: -0.02em;
+}
+.registerForm > *:last-child {
+  margin-top: 12px;
+}
+
+.inputWrapper {
+  position: relative;
+}
+.registerForm label {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  color: var(--secondary-text-color);
+}
+.registerForm input {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-right: 34px;
+  width: 100%;
+  border-radius: 12px;
+  background-color: var(--secondary-bg-color);
+  border: none;
+  outline: none;
+  border: 1px solid transparent;
+  color: var(--main-text-color);
+}
+.registerForm input:hover {
+  border: 1px solid rgba(249, 249, 249, 0.1);
+}
+.nameInput {
+  padding-left: 59px;
+}
+.emailInput {
+  padding-left: 49px;
+}
+.passwordInput {
+  padding-left: 78px;
+}
+.registerForm .error {
+  border: 1px solid #e90516;
+}
+.registerForm .correct {
+  border: 1px solid #30b94d;
+}
+.registerForm p {
+  margin-top: 4px;
+}
+.errorMessage {
+  color: #e90516;
+}
+.correctMessage {
+  color: #30b94d;
+}
+.inputSvg {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 13px;
+  right: 16px;
+}
+
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.formBtn {
+  border-radius: 30px;
+  padding: 12px 29px;
+  background-color: var(--main-text-color);
+  color: var(--main-bg-color);
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.29;
+  border: 1px solid transparent;
+  transition: background-color var(--general-transition),
+    color var(--general-transition);
+}
+.formBtn:hover,
+.formBtn:focus {
+  background-color: transparent;
+  color: var(--main-text-color);
+  border: 1px solid rgba(249, 249, 249, 0.2);
+}
+.loginLink {
+  line-height: 1.17;
+  text-decoration: underline;
+  color: var(--secondary-text-color);
+  transition: color var(--general-transition);
+}
+.loginLink:hover,
+.loginLink:focus {
+  color: var(--main-text-color);
+}
+
+@media screen and (min-width: 768px) {
+  .registerBlok {
+    /* max-width: 704px; */
+    padding: 40px 168px 214px 64px;
+  }
+  .mainTitle {
+    margin-top: 157px;
+    margin-bottom: 40px;
+    font-size: 64px;
+    line-height: 94%;
+    width: 444px;
+  }
+  .registerForm {
+    width: 472px;
+    gap: 14px;
+    font-size: 14px;
+    line-height: 1.29;
+  }
+  .registerForm > *:last-child {
+    margin-top: 68px;
+  }
+  .registerForm label {
+    top: 16px;
+  }
+  .registerForm input {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-right: 38px;
+  }
+  .nameInput {
+    padding-left: 65px;
+  }
+  .emailInput {
+    padding-left: 53px;
+  }
+  .passwordInput {
+    padding-left: 86px;
+  }
+  .registerForm p {
+    margin-top: 8px;
+  }
+  .inputSvg {
+    width: 20px;
+    height: 20px;
+    top: 15px;
+    right: 18px;
+  }
+  .buttonWrapper {
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  .formBtn {
+    padding: 16px 54px;
+    font-size: 20px;
+    line-height: 1;
+  }
+  .loginLink {
+    line-height: 1.29;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .registerBlok {
+    padding: 40px 64px 40px 64px;
+  }
+  .mainTitle {
+    margin-top: 107px;
+  }
 }
