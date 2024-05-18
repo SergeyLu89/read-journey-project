@@ -1,0 +1,11 @@
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media screen and (min-width: 1440px) {
+  .pageWrapper {
+    flex-direction: row;
+    gap: 16px;
+  }
+}
