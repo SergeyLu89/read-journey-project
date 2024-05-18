@@ -4,6 +4,7 @@
   --secondary-text-color: #686868;
   --main-color: #141414;
   --main-bg-color: #1f1f1f;
+  --secondary-bg-color: #262626;
   font-family: 'Gilroy', sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -30,6 +31,8 @@ html {
 }
 body {
   margin: 0;
+  background-color: var(--main-color);
+  color: var(--main-text-color);
 }
 
 code {
