@@ -1,4 +1,5 @@
 import css from './Paginator.module.css';
+import sprite from '../../../assets/images/sprite.svg';
 
 const Paginator = ({ setPage, page, totalPages }) => {
   const incrementPage = () => {
@@ -10,8 +11,15 @@ const Paginator = ({ setPage, page, totalPages }) => {
   return (
     <ul className={css.paginator}>
       <li>
-        <button type="button" disabled={page === 1} onClick={decrementPage}>
-          Left
+        <button
+          type="button"
+          disabled={page === 1}
+          onClick={decrementPage}
+          className={`${css.paginationBtn} ${page === 1 && css.disabledBtn}`}
+        >
+          <svg width="16" height="16" aria-label="left arrow icon">
+            <use href={sprite + '#icon-chevron-left'}></use>
+          </svg>
         </button>
       </li>
       <li>
@@ -19,8 +27,13 @@ const Paginator = ({ setPage, page, totalPages }) => {
           type="button"
           disabled={page === totalPages}
           onClick={incrementPage}
+          className={`${css.paginationBtn} ${
+            page === totalPages && css.disabledBtn
+          }`}
         >
-          Right
+          <svg width="16" height="16" aria-label="right arrow icon">
+            <use href={sprite + '#icon-chevron-right'}></use>
+          </svg>
         </button>
       </li>
     </ul>

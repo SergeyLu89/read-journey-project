@@ -1,5 +1,23 @@
 .paginator {
-  display: flex;
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  /* display: flex; */
+  display: inline-flex;
   align-items: center;
   gap: 8px;
+}
+.paginationBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: 1px solid rgba(249, 249, 249, 0.2);
+  border-radius: 100%;
+  width: 32px;
+  height: 32px;
+  stroke: var(--main-text-color);
+}
+.disabledBtn {
+  stroke: rgba(249, 249, 249, 0.2);
 }
