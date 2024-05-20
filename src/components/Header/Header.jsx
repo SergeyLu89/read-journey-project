@@ -14,9 +14,11 @@ const Header = () => {
 
   const openMenu = () => {
     setIsOpen(true);
+    document.body.style.overflow = 'hidden';
   };
   const closeMenu = () => {
     setIsOpen(false);
+    document.body.style.overflow = 'auto';
   };
   return (
     <section className={css.header}>

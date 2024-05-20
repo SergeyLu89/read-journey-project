@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { logOutThunk } from '../../../redux/auth/authOperations';
 import sprite from '../../../assets/images/sprite.svg';
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 
 const BurgerMenu = ({ isOpen, closeMenu }) => {
   const dispatch = useDispatch();
@@ -13,12 +13,6 @@ const BurgerMenu = ({ isOpen, closeMenu }) => {
       closeMenu();
     }
   }, [isOpen, closeMenu]);
-
-  useEffect(() => {
-    isOpen
-      ? (document.body.style.overflow = 'hidden')
-      : (document.body.style.overflow = 'auto');
-  }, [isOpen]);
 
   return (
     <div className={css.backdrop}>
