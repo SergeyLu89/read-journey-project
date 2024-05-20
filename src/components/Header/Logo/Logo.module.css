@@ -1,12 +1,25 @@
 .logo {
   display: flex;
   align-items: center;
-  justify-content: center;
+  width: 182px;
   gap: 4px;
   font-weight: 700;
   font-size: 18px;
   line-height: 100%;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  /* color: var(--main-text-color); */
 }
+@media screen and (max-width: 767.9px) {
+  .logo span {
+    display: none;
+  }
+}
+/* @media screen and (min-width: 768px) {
+  .logo span {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+} */
