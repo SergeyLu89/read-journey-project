@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const UserNav = () => {
   return (
-    <nav>
+    <nav className={css.userNav}>
       <ul className={css.userNavList}>
         <li>
           <NavLink
