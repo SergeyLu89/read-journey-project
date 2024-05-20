@@ -20,7 +20,7 @@ const RecommendedBooksItem = ({ book }) => {
   const { author, imageUrl, title, _id } = book;
   return (
     <>
-      <li>
+      <li className={css.recommendedBooksItem}>
         <button type="button" onClick={openModal} className={css.modalOpenBtn}>
           <img src={imageUrl} alt={title} className={css.bookImage} />
         </button>

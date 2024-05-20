@@ -1,5 +1,4 @@
-// import css from './RecommendedBooksList.module.css';
-
+import css from './RecommendedBooksList.module.css';
 import Paginator from 'components/reUseComponents/Paginator/Paginator';
 import RecommendedBooksItem from '../RecommendedBooksItem/RecommendedBooksItem';
 import { useDispatch, useSelector } from 'react-redux';
@@ -37,14 +36,14 @@ const RecommendedBooksList = () => {
   }, [dispatch, page, limit, title, author]);
 
   return (
-    <section>
+    <section className={css.recommendedBooks}>
       {isError && <p>Oops, something went wrong.</p>}
-      <h2>Recommended</h2>
+      <h2 className={css.recommendedBooksTitle}>Recommended</h2>
       {isLoading && <p>Loading...</p>}
       {totalPages > 0 ? (
         <>
           <Paginator setPage={setPage} page={page} totalPages={totalPages} />
-          <ul>
+          <ul className={css.recommendedBooksList}>
             {books.map(book => (
               <RecommendedBooksItem book={book} key={book._id} />
             ))}

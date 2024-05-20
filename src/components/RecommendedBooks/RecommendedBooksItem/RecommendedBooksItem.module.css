@@ -5,10 +5,27 @@
   border: none;
   padding: 0;
   overflow: hidden;
+  margin-bottom: 8px;
 }
 
 .bookImage {
   width: 137px;
   height: 208px;
   border-radius: 8px;
+}
+.recommendedBooksItem h4 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  width: 137px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 2px;
+}
+.recommendedBooksItem p {
+  font-size: 10px;
+  line-height: 1.2;
+  color: var(--secondary-text-color);
 }
