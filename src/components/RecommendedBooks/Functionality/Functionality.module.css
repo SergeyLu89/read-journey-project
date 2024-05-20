@@ -1,0 +1,78 @@
+.functionalitySection {
+  background-color: var(--secondary-bg-color);
+  border-radius: 12px;
+  padding: 20px;
+}
+.functionalitySection h3 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+  margin-bottom: 20px;
+}
+.functionalityList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.functionalityListItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.numberWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: var(--main-text-color);
+}
+.numberWrapper span {
+  color: var(--main-bg-color);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+}
+.functionalityDescr {
+  width: 203px;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  color: var(--secondary-text-color);
+}
+.functionalityDescr span {
+  color: var(--main-text-color);
+}
+.functionalityLinkWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.functionalityLink {
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  text-decoration: underline;
+  color: var(--secondary-text-color);
+}
+.functionalityLinkSvg {
+  display: flex;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .functionalitySection {
+    width: 313px;
+  }
+  .functionalitySection h3 {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+  .numberWrapper {
+    width: 44px;
+    height: 44px;
+  }
+  .numberWrapper span {
+    font-size: 20px;
+  }
+}
