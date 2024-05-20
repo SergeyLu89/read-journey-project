@@ -1,5 +1,5 @@
-import { useRecommendedFilter } from 'hooks/useRecommendedFilter';
 import css from './RecommendedFilter.module.css';
+import { useRecommendedFilter } from 'hooks/useRecommendedFilter';
 import { useForm } from 'react-hook-form';
 
 const RecommendedFilter = () => {
