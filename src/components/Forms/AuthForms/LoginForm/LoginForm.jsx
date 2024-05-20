@@ -89,7 +89,9 @@ const LoginForm = () => {
               onClick={() => {
                 setShowPassword(!showPassword);
               }}
-              className={css.inputSvg}
+              className={`${css.inputSvg} ${css.eyeSvg} ${
+                errors.password && css.eyeError
+              } ${dirtyFields.password && !errors.password && css.eyeCorrect}`}
             >
               <use href={sprite + '#icon-eye'}></use>
             </svg>
@@ -98,7 +100,9 @@ const LoginForm = () => {
               onClick={() => {
                 setShowPassword(!showPassword);
               }}
-              className={css.inputSvg}
+              className={`${css.inputSvg} ${css.eyeSvg} ${
+                errors.password && css.eyeError
+              } ${dirtyFields.password && !errors.password && css.eyeCorrect}`}
             >
               <use href={sprite + '#icon-eye-off'}></use>
             </svg>

@@ -78,6 +78,16 @@
   top: 13px;
   right: 16px;
 }
+.eyeSvg {
+  cursor: pointer;
+  stroke: var(--main-text-color);
+}
+.eyeError {
+  stroke: #e90516;
+}
+.eyeCorrect {
+  stroke: #30b94d;
+}
 .buttonWrapper {
   display: flex;
   align-items: center;
@@ -88,11 +98,10 @@
   padding: 12px 29px;
   background-color: var(--main-text-color);
   color: var(--main-bg-color);
-  border: none;
+  border: 1px solid transparent;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.29;
-  border: 1px solid transparent;
   transition: background-color var(--general-transition),
     color var(--general-transition);
 }
@@ -156,6 +165,7 @@
     top: 15px;
     right: 18px;
   }
+
   .buttonWrapper {
     justify-content: flex-start;
     gap: 20px;

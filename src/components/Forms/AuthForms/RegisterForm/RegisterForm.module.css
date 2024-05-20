@@ -82,6 +82,16 @@
   top: 13px;
   right: 16px;
 }
+.eyeSvg {
+  cursor: pointer;
+  stroke: var(--main-text-color);
+}
+.eyeError {
+  stroke: #e90516;
+}
+.eyeCorrect {
+  stroke: #30b94d;
+}
 
 .buttonWrapper {
   display: flex;
