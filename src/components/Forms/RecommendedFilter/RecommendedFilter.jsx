@@ -35,6 +35,7 @@ const RecommendedFilter = () => {
               setValue('title', e.target.value);
             }}
             value={watch('title' || '')}
+            className={css.titleInput}
           />
         </div>
 
@@ -48,10 +49,13 @@ const RecommendedFilter = () => {
               setValue('author', e.target.value);
             }}
             value={watch('author' || '')}
+            className={css.authorInput}
           />
         </div>
 
-        <button type="submit">To apply</button>
+        <button type="submit" className={css.filterBnt}>
+          To apply
+        </button>
       </form>
     </section>
   );

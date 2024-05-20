@@ -1,8 +1,105 @@
-/* .recommendedFilter {
-  
-} */
+.recommendedFilter p {
+  font-size: 10px;
+  line-height: 1.2;
+  margin-left: 14px;
+  margin-bottom: 8px;
+}
 .filterForm {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  font-size: 12px;
+  line-height: 1.33;
+}
+.filterForm > *:last-child {
+  margin-top: 12px;
+}
+.inputWrapper {
+  position: relative;
+}
+.filterForm label {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  color: var(--secondary-text-color);
+}
+.filterForm input {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-right: 14px;
+  width: 100%;
+  border-radius: 12px;
+  background-color: var(--secondary-bg-color);
+  border: none;
+  outline: none;
+  border: 1px solid transparent;
+  color: var(--main-text-color);
+}
+.filterForm input:hover {
+  border: 1px solid rgba(249, 249, 249, 0.1);
+}
+.titleInput {
+  padding-left: 77px;
+}
+.authorInput {
+  padding-left: 85px;
+}
+.filterBnt {
+  margin-right: auto;
+  border: 1px solid rgba(249, 249, 249, 0.2);
+  border-radius: 30px;
+  padding: 10px 20px;
+  background-color: transparent;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.29;
+  color: var(--main-text-color);
+  transition: background-color var(--general-transition),
+    color var(--general-transition);
+}
+.filterBnt:hover,
+.filterBnt:focus {
+  background-color: var(--main-text-color);
+  color: var(--main-bg-color);
+  border: 1px solid transparent;
+}
+
+@media screen and (min-width: 768px) {
+  .recommendedFilter p {
+    font-size: 14px;
+    line-height: 1.29;
+  }
+  .filterForm {
+    width: 295px;
+    font-size: 14px;
+    line-height: 1.29;
+  }
+  .filterForm label {
+    position: absolute;
+    top: 16px;
+    left: 14px;
+    color: var(--secondary-text-color);
+  }
+  .filterForm input {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-right: 14px;
+  }
+  .titleInput {
+    padding-left: 86px;
+  }
+  .authorInput {
+    padding-left: 95px;
+  }
+  .filterBnt {
+    padding: 12px 28px;
+    font-size: 16px;
+    line-height: 1.12;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .filterForm {
+    width: 313px;
+  }
 }
