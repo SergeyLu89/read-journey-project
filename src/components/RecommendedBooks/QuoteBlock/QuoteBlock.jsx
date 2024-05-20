@@ -6,9 +6,8 @@ const QuoteBlock = () => {
     <section className={css.quoteBlock}>
       <img src={booksPng} alt="books" className={css.booksImage} />
       <p className={css.quoteDescr}>
-        "Books are
-        <span className={css.quoteDescrAccent}>windows</span>
-        to the world, and reading is a journey into the unknown."
+        "Books are <span className={css.quoteDescrAccent}>windows</span> to the
+        world, and reading is a journey into the unknown."
       </p>
     </section>
   );
