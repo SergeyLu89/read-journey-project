@@ -13,7 +13,8 @@ const schema = Yup.object({
   author: Yup.string().required('The author is a required field'),
   totalPages: Yup.number()
     .required('Number of pages is a required field')
-    .typeError('Hmm... I think this is not a number :)'),
+    .typeError('Hmm... I think this is not a number :)')
+    .min(1, 'There must be more than 0 pages'),
 });
 
 const MyLibraryForm = () => {
@@ -23,9 +24,9 @@ const MyLibraryForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors, isValid, dirtyFields },
     reset,
-  } = useForm({ mode: 'onBlur', resolver: yupResolver(schema) });
+  } = useForm({ mode: 'onChange', resolver: yupResolver(schema) });
 
   const openModal = () => {
     setIsOpen(true);
@@ -46,29 +47,66 @@ const MyLibraryForm = () => {
   };
 
   return (
-    <div>
-      <p>Create your library:</p>
+    <section className={css.libraryFormSection}>
+      <p className={css.formTitile}>Create your library:</p>
       <form
         onSubmit={handleSubmit(onSubmit)}
         autoComplete="off"
         className={css.libraryForm}
       >
-        <label htmlFor="title">Book title:</label>
-        <input type="text" name="title" id="title" {...register('title')} />
-        <p>{errors.title?.message}</p>
+        <div className={css.inputWrapper}>
+          <label htmlFor="title">Book title:</label>
+          <input
+            type="text"
+            name="title"
+            id="title"
+            {...register('title')}
+            className={`${css.titleInput} ${errors.title && css.error} 
+            ${dirtyFields.title && !errors.title && css.correct}`}
+          />
+          {errors?.title && (
+            <p className={css.errorMessage}>{errors.title?.message}</p>
+          )}
+          {dirtyFields.title && !errors.title && (
+            <p className={css.correctMessage}>Fitting title</p>
+          )}
+        </div>
 
-        <label htmlFor="author">The author:</label>
-        <input type="text" name="author" id="author" {...register('author')} />
-        <p>{errors.author?.message}</p>
+        <div className={css.inputWrapper}>
+          <label htmlFor="author">The author:</label>
+          <input
+            type="text"
+            name="author"
+            id="author"
+            {...register('author')}
+            className={`${css.authorInput} ${errors.author && css.error} 
+            ${dirtyFields.author && !errors.author && css.correct}`}
+          />
+          {errors?.author && (
+            <p className={css.errorMessage}>{errors.author?.message}</p>
+          )}
+          {dirtyFields.author && !errors.author && (
+            <p className={css.correctMessage}>Fitting author</p>
+          )}
+        </div>
 
-        <label htmlFor="pages">Number of pages:</label>
-        <input
-          type="text"
-          name="pages"
-          id="pages"
-          {...register('totalPages')}
-        />
-        <p>{errors.totalPages?.message}</p>
+        <div className={css.inputWrapper}>
+          <label htmlFor="pages">Number of pages:</label>
+          <input
+            type="text"
+            name="pages"
+            id="pages"
+            {...register('totalPages')}
+            className={`${css.pagesInput} ${errors.totalPages && css.error} 
+            ${dirtyFields.totalPages && !errors.totalPages && css.correct}`}
+          />
+          {errors?.totalPages && (
+            <p className={css.errorMessage}>{errors.totalPages?.message}</p>
+          )}
+          {dirtyFields.totalPages && !errors.totalPages && (
+            <p className={css.correctMessage}>Almost done</p>
+          )}
+        </div>
 
         <button type="submit" disabled={!isValid} className={css.formBtn}>
           Add book
@@ -79,7 +117,7 @@ const MyLibraryForm = () => {
           <SuccesNotification />
         </Modal>
       )}
-    </div>
+    </section>
   );
 };
 export default MyLibraryForm;
