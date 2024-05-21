@@ -12,7 +12,6 @@ const RecommendedFilter = () => {
   });
 
   const onSubmit = values => {
-    console.log('values: ', values);
     setRecommendedFilter('title', values.title);
     setRecommendedFilter('author', values.author);
   };

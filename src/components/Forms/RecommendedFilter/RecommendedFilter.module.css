@@ -75,10 +75,8 @@
     line-height: 1.29;
   }
   .filterForm label {
-    position: absolute;
     top: 16px;
     left: 14px;
-    color: var(--secondary-text-color);
   }
   .filterForm input {
     padding-top: 16px;
