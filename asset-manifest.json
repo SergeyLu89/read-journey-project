@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/read-journey-project/static/css/main.2b60f6b6.css",
-    "main.js": "/read-journey-project/static/js/main.6c1527be.js",
+    "main.js": "/read-journey-project/static/js/main.508dc1b7.js",
     "static/css/575.400755b9.chunk.css": "/read-journey-project/static/css/575.400755b9.chunk.css",
     "static/js/575.53049cf7.chunk.js": "/read-journey-project/static/js/575.53049cf7.chunk.js",
     "static/css/404.06216df5.chunk.css": "/read-journey-project/static/css/404.06216df5.chunk.css",
     "static/js/404.76936d27.chunk.js": "/read-journey-project/static/js/404.76936d27.chunk.js",
-    "static/css/733.22c77bdf.chunk.css": "/read-journey-project/static/css/733.22c77bdf.chunk.css",
-    "static/js/733.3b50277c.chunk.js": "/read-journey-project/static/js/733.3b50277c.chunk.js",
-    "static/css/775.92347767.chunk.css": "/read-journey-project/static/css/775.92347767.chunk.css",
-    "static/js/775.02f9e0dd.chunk.js": "/read-journey-project/static/js/775.02f9e0dd.chunk.js",
+    "static/css/733.bdcaf53e.chunk.css": "/read-journey-project/static/css/733.bdcaf53e.chunk.css",
+    "static/js/733.b2d10105.chunk.js": "/read-journey-project/static/js/733.b2d10105.chunk.js",
+    "static/css/775.9d2bef36.chunk.css": "/read-journey-project/static/css/775.9d2bef36.chunk.css",
+    "static/js/775.5ba35c21.chunk.js": "/read-journey-project/static/js/775.5ba35c21.chunk.js",
     "static/css/210.5f7f77a0.chunk.css": "/read-journey-project/static/css/210.5f7f77a0.chunk.css",
     "static/js/210.128b7bdd.chunk.js": "/read-journey-project/static/js/210.128b7bdd.chunk.js",
     "static/js/134.31fc3d83.chunk.js": "/read-journey-project/static/js/134.31fc3d83.chunk.js",
@@ -28,15 +28,15 @@
     "static/media/hero-mobile.webp": "/read-journey-project/static/media/hero-mobile.4f5034c890b8c3f10a11.webp",
     "index.html": "/read-journey-project/index.html",
     "main.2b60f6b6.css.map": "/read-journey-project/static/css/main.2b60f6b6.css.map",
-    "main.6c1527be.js.map": "/read-journey-project/static/js/main.6c1527be.js.map",
+    "main.508dc1b7.js.map": "/read-journey-project/static/js/main.508dc1b7.js.map",
     "575.400755b9.chunk.css.map": "/read-journey-project/static/css/575.400755b9.chunk.css.map",
     "575.53049cf7.chunk.js.map": "/read-journey-project/static/js/575.53049cf7.chunk.js.map",
     "404.06216df5.chunk.css.map": "/read-journey-project/static/css/404.06216df5.chunk.css.map",
     "404.76936d27.chunk.js.map": "/read-journey-project/static/js/404.76936d27.chunk.js.map",
-    "733.22c77bdf.chunk.css.map": "/read-journey-project/static/css/733.22c77bdf.chunk.css.map",
-    "733.3b50277c.chunk.js.map": "/read-journey-project/static/js/733.3b50277c.chunk.js.map",
-    "775.92347767.chunk.css.map": "/read-journey-project/static/css/775.92347767.chunk.css.map",
-    "775.02f9e0dd.chunk.js.map": "/read-journey-project/static/js/775.02f9e0dd.chunk.js.map",
+    "733.bdcaf53e.chunk.css.map": "/read-journey-project/static/css/733.bdcaf53e.chunk.css.map",
+    "733.b2d10105.chunk.js.map": "/read-journey-project/static/js/733.b2d10105.chunk.js.map",
+    "775.9d2bef36.chunk.css.map": "/read-journey-project/static/css/775.9d2bef36.chunk.css.map",
+    "775.5ba35c21.chunk.js.map": "/read-journey-project/static/js/775.5ba35c21.chunk.js.map",
     "210.5f7f77a0.chunk.css.map": "/read-journey-project/static/css/210.5f7f77a0.chunk.css.map",
     "210.128b7bdd.chunk.js.map": "/read-journey-project/static/js/210.128b7bdd.chunk.js.map",
     "134.31fc3d83.chunk.js.map": "/read-journey-project/static/js/134.31fc3d83.chunk.js.map",
@@ -45,6 +45,6 @@
   },
   "entrypoints": [
     "static/css/main.2b60f6b6.css",
-    "static/js/main.6c1527be.js"
+    "static/js/main.508dc1b7.js"
   ]
 }
