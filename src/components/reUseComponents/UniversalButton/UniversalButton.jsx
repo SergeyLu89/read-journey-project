@@ -1,8 +1,8 @@
-// import css from './UniversalButton.module.css'
+import css from './UniversalButton.module.css';
 
 const UniversalButton = ({ title, btnFunction }) => {
   return (
-    <button type="button" onClick={btnFunction}>
+    <button type="button" onClick={btnFunction} className={css.universalbtn}>
       {title}
     </button>
   );
