@@ -32,7 +32,7 @@ const AddReadingForm = ({ book }) => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors, isValid, dirtyFields },
     reset,
   } = useForm({ mode: 'onChange', resolver: yupResolver(schema) });
 
@@ -58,22 +58,42 @@ const AddReadingForm = ({ book }) => {
   };
 
   return (
-    <>
-      {isAct ? <p>Stop page:</p> : <p>Start page:</p>}
+    <section className={css.readingFormSection}>
+      {isAct ? (
+        <p className={css.formTitile}>Stop page:</p>
+      ) : (
+        <p className={css.formTitile}>Start page:</p>
+      )}
 
       <form
         onSubmit={handleSubmit(togleOnSubmit)}
         autoComplete="off"
-        className={css.libraryForm}
+        className={css.readingForm}
       >
-        <label htmlFor="page">Page number:</label>
-        <input type="text" name="page" id="page" {...register('page')} />
-        <p>{errors.page?.message}</p>
+        <div className={css.inputWrapper}>
+          <label htmlFor="page">Page number:</label>
+          <input
+            type="text"
+            name="page"
+            id="page"
+            {...register('page')}
+            className={`${css.pageInput} ${errors.page && css.error} 
+            ${dirtyFields.page && !errors.page && css.correct}`}
+          />
+          {/* <p>{errors.page?.message}</p> */}
+          {errors?.page && (
+            <p className={css.errorMessage}>{errors.page?.message}</p>
+          )}
+          {dirtyFields.page && !errors.page && (
+            <p className={css.correctMessage}>Correct</p>
+          )}
+        </div>
+
         <button disabled={!isValid} className={css.formBtn}>
           {isAct ? 'To stop' : 'To start'}
         </button>
       </form>
-    </>
+    </section>
   );
 };
 export default AddReadingForm;

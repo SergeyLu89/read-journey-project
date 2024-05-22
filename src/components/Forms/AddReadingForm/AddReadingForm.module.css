@@ -1,0 +1,113 @@
+.formTitile {
+  font-size: 10px;
+  line-height: 1.2;
+  margin-left: 14px;
+  margin-bottom: 8px;
+}
+.readingForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 12px;
+  line-height: 1.33;
+  margin-bottom: 20px;
+}
+.inputWrapper {
+  position: relative;
+}
+.readingForm label {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  color: var(--secondary-text-color);
+}
+.readingForm input {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-right: 14px;
+  width: 100%;
+  border-radius: 12px;
+  background-color: var(--secondary-bg-color);
+  border: none;
+  outline: none;
+  border: 1px solid transparent;
+  color: var(--main-text-color);
+}
+.readingForm input:hover {
+  border: 1px solid rgba(249, 249, 249, 0.1);
+}
+.pageInput {
+  padding-left: 99px;
+}
+.readingForm .error {
+  border: 1px solid #e90516;
+}
+.readingForm .correct {
+  border: 1px solid #30b94d;
+}
+.readingForm p {
+  margin-top: 4px;
+}
+.errorMessage {
+  color: #e90516;
+}
+.correctMessage {
+  color: #30b94d;
+}
+.formBtn {
+  margin-right: auto;
+  border: 1px solid rgba(249, 249, 249, 0.2);
+  border-radius: 30px;
+  padding: 10px 20px;
+  background-color: transparent;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.29;
+  color: var(--main-text-color);
+  transition: background-color var(--general-transition),
+    color var(--general-transition);
+}
+.formBtn:hover,
+.formBtn:focus {
+  background-color: var(--main-text-color);
+  color: var(--main-bg-color);
+  border: 1px solid transparent;
+}
+@media screen and (min-width: 768px) and (max-width: 1439.9px) {
+  .readingForm {
+    margin-bottom: 0px;
+    margin-right: 20px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .formTitile {
+    font-size: 14px;
+    line-height: 1.29;
+  }
+  .readingForm {
+    width: 295px;
+    font-size: 14px;
+    line-height: 1.29;
+  }
+  .readingForm label {
+    top: 16px;
+  }
+  .readingForm input {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-right: 16px;
+  }
+  .pageInput {
+    padding-left: 111px;
+  }
+  .formBnt {
+    padding: 12px 28px;
+    font-size: 16px;
+    line-height: 1.12;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .readingForm {
+    width: 313px;
+  }
+}

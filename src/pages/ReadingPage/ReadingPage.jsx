@@ -1,4 +1,4 @@
-// import css from './ReadingPage.module.css'
+import css from './ReadingPage.module.css';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';
@@ -33,13 +33,13 @@ const ReadingPage = () => {
     <>
       {isLoading && <p>Loading...</p>}
       {book && (
-        <>
+        <div className={css.readingPageWrapper}>
           <Dashboard>
             <AddReadingForm book={book} />
             {book.status === 'unread' ? <Progress /> : <Details book={book} />}
           </Dashboard>
           <MyBook book={book} />
-        </>
+        </div>
       )}
     </>
   );

@@ -1,0 +1,15 @@
+.readingPageWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+@media screen and (min-width: 768px) {
+  .readingPageWrapper {
+    gap: 16px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .readingPageWrapper {
+    flex-direction: row;
+  }
+}
