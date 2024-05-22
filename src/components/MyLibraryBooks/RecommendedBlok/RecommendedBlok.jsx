@@ -1,10 +1,10 @@
-import css from './RecommendedBlok';
-
+import css from './RecommendedBlok.module.css';
 import { useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { getRecommended } from '../../../redux/books/recommendedBooks/recommendedBooksOperations';
 import { defaultImageBookSmallPng } from 'assets/images/defaultImages/defaultImages';
 import { Link } from 'react-router-dom';
+import sprite from '../../../assets/images/sprite.svg';
 
 const RecommendedBlok = () => {
   const dispatch = useDispatch();
@@ -36,11 +36,11 @@ const RecommendedBlok = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <section className={css.recommendedSection}>
       <h3>Recommended books</h3>
-      <ul>
+      <ul className={css.recommendedSectionList}>
         {resultArray.map(({ imageUrl, title, author, _id }) => (
-          <li key={_id}>
+          <li key={_id} className={css.recommendedSectionListItem}>
             <img
               src={imageUrl ? imageUrl : defaultImageBookSmallPng}
               alt={title}
@@ -50,10 +50,17 @@ const RecommendedBlok = () => {
           </li>
         ))}
       </ul>
-      <Link className={css.recommebdedLink} to="/">
-        Home
-      </Link>
-    </>
+      <div className={css.recommendedLinkWrapper}>
+        <Link className={css.recommendedLink} to="/">
+          Home
+        </Link>
+        <Link className={css.recommendedLinkSvg} to="/">
+          <svg aria-label="arrow icon">
+            <use href={sprite + '#icon-log-in'}></use>
+          </svg>
+        </Link>
+      </div>
+    </section>
   );
 };
 export default RecommendedBlok;
