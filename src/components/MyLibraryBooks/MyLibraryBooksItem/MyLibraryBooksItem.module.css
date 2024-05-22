@@ -1,0 +1,55 @@
+.modalOpenBtn {
+  width: 137px;
+  height: 208px;
+  border-radius: 8px;
+  border: none;
+  padding: 0;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.bookImage {
+  width: 137px;
+  height: 208px;
+  border-radius: 8px;
+  background-color: var(--secondary-bg-color);
+}
+.descriptionWrapper {
+  width: 95px;
+}
+.libraryBooksItem h4 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 2px;
+}
+.libraryBooksItem p {
+  font-size: 10px;
+  line-height: 1.2;
+  color: var(--secondary-text-color);
+}
+.deleteBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(232, 80, 80, 0.2);
+  border-radius: 100%;
+  background-color: rgba(232, 80, 80, 0.1);
+  stroke: #e85050;
+  transition: border var(--general-transition), stroke var(--general-transition);
+}
+.btnWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.deleteBtn:hover,
+.deleteBtn:focus {
+  stroke: #e90516;
+  border: 1px solid #e90516;
+}
