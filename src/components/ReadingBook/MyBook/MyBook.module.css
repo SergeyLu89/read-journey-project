@@ -1,0 +1,96 @@
+.myBookSction {
+  padding: 40px 20px;
+  border-radius: 30px;
+  background-color: var(--main-bg-color);
+}
+.myBookSction h2 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  margin-bottom: 40px;
+}
+.bookWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 146px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+.bookWrapper img {
+  width: 137px;
+  height: 208px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.bookWrapper h3 {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.bookWrapper p {
+  font-size: 10px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  color: var(--secondary-text-color);
+}
+.statusSvg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .myBookSction {
+    padding: 40px 40px 25px 40px;
+  }
+  .myBookSction h2 {
+    font-size: 28px;
+    line-height: 1.14;
+    margin-bottom: 32px;
+  }
+  .bookWrapper {
+    width: 317px;
+    margin-bottom: 16px;
+  }
+  .bookWrapper img {
+    width: 169px;
+    height: 256px;
+    margin-bottom: 25px;
+  }
+  .bookWrapper h3 {
+    font-size: 20px;
+    line-height: 100%;
+    margin-bottom: 4px;
+  }
+  .bookWrapper p {
+    font-size: 14px;
+    line-height: 129%;
+  }
+  .statusSvg {
+    height: 50px;
+    width: 50px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .myBookSction {
+    padding: 40px 40px 53px 40px;
+    width: 847px;
+  }
+  .myBookSction h2 {
+    margin-bottom: 44px;
+  }
+  .bookWrapper img {
+    width: 244px;
+    height: 340px;
+  }
+}
