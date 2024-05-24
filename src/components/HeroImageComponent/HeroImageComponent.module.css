@@ -15,4 +15,7 @@
   .heroSection {
     padding: 80px 98px 0 97px;
   }
+  .heroSection picture {
+    margin-top: auto;
+  }
 }
