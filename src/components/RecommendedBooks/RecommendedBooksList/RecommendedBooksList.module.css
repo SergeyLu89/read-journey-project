@@ -16,6 +16,35 @@
   flex-wrap: wrap;
   gap: 21px;
 }
+.noContentBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 197px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.imgWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background-color: var(--secondary-bg-color);
+  border-radius: 100%;
+  margin-bottom: 10px;
+}
+.booksImage {
+  width: 50px;
+  height: 50px;
+}
+.noContentBox p {
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: var(--secondary-text-color);
+}
 @media screen and (min-width: 768px) {
   .recommendedBooks {
     padding: 40px;
@@ -29,6 +58,18 @@
     column-gap: 25px;
     grid-row: 27px;
   }
+  .noContentBox {
+    width: 274px;
+  }
+  .imgWrapper {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 20px;
+  }
+  .booksImage {
+    width: 70px;
+    height: 70px;
+  }
 }
 @media screen and (min-width: 1440px) {
   .recommendedBooks {
@@ -37,5 +78,8 @@
   }
   .recommendedBooksList {
     column-gap: 20px;
+  }
+  .noContentBox {
+    margin-top: 161px;
   }
 }

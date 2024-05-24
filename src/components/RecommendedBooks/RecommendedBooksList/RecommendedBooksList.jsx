@@ -1,4 +1,5 @@
 import css from './RecommendedBooksList.module.css';
+import { booksPng } from '../../../assets/images/defaultImages/defaultImages';
 import Paginator from 'components/reUseComponents/Paginator/Paginator';
 import RecommendedBooksItem from '../RecommendedBooksItem/RecommendedBooksItem';
 import { useDispatch, useSelector } from 'react-redux';
@@ -50,7 +51,12 @@ const RecommendedBooksList = () => {
           </ul>
         </>
       ) : (
-        <p> Nothing found</p>
+        <div className={css.noContentBox}>
+          <div className={css.imgWrapper}>
+            <img src={booksPng} alt="book" className={css.booksImage} />
+          </div>
+          <p>Nothing found</p>
+        </div>
       )}
     </section>
   );
