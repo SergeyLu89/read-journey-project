@@ -1,5 +1,5 @@
 .libraryBooks {
-  /* position: relative; */
+  position: relative;
   padding: 40px 20px;
   border-radius: 30px;
   background-color: var(--main-bg-color);
