@@ -3,12 +3,23 @@
   border-radius: 30px;
   background-color: var(--main-bg-color);
 }
+.titleWrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
 .myBookSction h2 {
   font-weight: 700;
   font-size: 20px;
   line-height: 100%;
   letter-spacing: -0.02em;
-  margin-bottom: 40px;
+}
+.readingTime {
+  font-size: 12px;
+  line-height: 1.33333;
+  letter-spacing: -0.02em;
+  color: var(--secondary-text-color);
 }
 .bookWrapper {
   display: flex;
@@ -53,10 +64,16 @@
   .myBookSction {
     padding: 40px 40px 25px 40px;
   }
+  .titleWrapper {
+    margin-bottom: 32px;
+  }
   .myBookSction h2 {
     font-size: 28px;
     line-height: 1.14;
-    margin-bottom: 32px;
+  }
+  .readingTime {
+    font-size: 14px;
+    line-height: 129%;
   }
   .bookWrapper {
     width: 317px;
@@ -86,7 +103,7 @@
     padding: 40px 40px 53px 40px;
     width: 847px;
   }
-  .myBookSction h2 {
+  .titleWrapper {
     margin-bottom: 44px;
   }
   .bookWrapper img {

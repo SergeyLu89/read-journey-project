@@ -6,22 +6,31 @@ import { selectIsWhileReading } from '../../../redux/books/readingBook/readingBo
 
 const MyBook = ({ book }) => {
   const isWhileReading = useSelector(selectIsWhileReading);
-  const { imageUrl, title, author } = book;
+  const { imageUrl, title, author, timeLeftToRead } = book;
+
+  const hours = timeLeftToRead?.hours;
+  const minutes = timeLeftToRead?.minutes;
+
   return (
     <section className={css.myBookSction}>
-      <h2>My reading</h2>
+      <div className={css.titleWrapper}>
+        <h2>My reading</h2>
+        {timeLeftToRead && (
+          <p className={css.readingTime}>
+            {hours} hours and {minutes} minutes left
+          </p>
+        )}
+      </div>
       <div className={css.bookWrapper}>
         <img src={imageUrl ? imageUrl : defaultImageBookbigPng} alt={title} />
         <h3>{title}</h3>
         <p>{author}</p>
       </div>
       {isWhileReading ? (
-        // <span className={css.indicatorStop}>STOP</span>
         <svg className={css.statusSvg} aria-label="stop icon">
           <use href={sprite + '#icon-stop'}></use>
         </svg>
       ) : (
-        // <span className={css.indicatorStart}>START</span>
         <svg className={css.statusSvg} aria-label="start icon">
           <use href={sprite + '#icon-start'}></use>
         </svg>
