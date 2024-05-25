@@ -9,9 +9,20 @@
   display: flex;
   flex-direction: column;
   max-height: 211px;
-  overflow: scroll;
+  overflow: auto;
   background-color: var(--secondary-bg-color);
   border-radius: 12px;
+}
+.dairyList::-webkit-scrollbar {
+  width: 5px;
+}
+.dairyList::-webkit-scrollbar-track {
+  background: transparent;
+}
+.dairyList::-webkit-scrollbar-thumb {
+  background-color: #343436;
+
+  border-radius: 15px;
 }
 
 .dairyList li:first-child .date {
