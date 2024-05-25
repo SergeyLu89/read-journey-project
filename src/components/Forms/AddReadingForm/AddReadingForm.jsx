@@ -80,7 +80,6 @@ const AddReadingForm = ({ book }) => {
             className={`${css.pageInput} ${errors.page && css.error} 
             ${dirtyFields.page && !errors.page && css.correct}`}
           />
-          {/* <p>{errors.page?.message}</p> */}
           {errors?.page && (
             <p className={css.errorMessage}>{errors.page?.message}</p>
           )}
