@@ -12,6 +12,7 @@ import MyBook from 'components/ReadingBook/MyBook/MyBook';
 import Progress from 'components/ReadingBook/Progress/Progress';
 import AddReadingForm from 'components/Forms/AddReadingForm/AddReadingForm';
 import Details from 'components/ReadingBook/Details/Details';
+import { Loader } from 'components/Loader/Loader';
 
 const ReadingPage = () => {
   const location = useLocation();
@@ -31,7 +32,7 @@ const ReadingPage = () => {
 
   return (
     <>
-      {isLoading && <p>Loading...</p>}
+      {isLoading && <Loader />}
       {book && (
         <div className={css.readingPageWrapper}>
           <Dashboard>

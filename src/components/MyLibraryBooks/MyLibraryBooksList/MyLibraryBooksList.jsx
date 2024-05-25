@@ -10,6 +10,7 @@ import {
 } from '../../../redux/books/libraryBooks/libraryBooksSelectors';
 import MyLibraryBooksItem from '../MyLibraryBooksItem/MyLibraryBooksItem';
 import BaseFilter from 'components/Forms/BaseFilter/BaseFilter';
+import { Loader } from 'components/Loader/Loader';
 
 const options = [
   { value: 'unread', label: 'Unread' },
@@ -51,7 +52,7 @@ const MyLibraryBooksList = () => {
         onChange={selectStatus}
       />
       <h2 className={css.libraryBooksTitle}>My library</h2>
-      {isLoading && <p>Loading...</p>}
+      {isLoading && <Loader />}
       {userBooks.length !== 0 ? (
         <ul className={css.libraryBooksList}>
           {userBooks.map(book => (

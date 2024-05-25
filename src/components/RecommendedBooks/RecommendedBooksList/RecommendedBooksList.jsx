@@ -14,6 +14,7 @@ import { useEffect } from 'react';
 import { usePagination } from 'hooks/usePagination';
 import { RecommendedBooksLimit } from 'constants/paginationLimits';
 import { useRecommendedFilter } from 'hooks/useRecommendedFilter';
+import { Loader } from 'components/Loader/Loader';
 
 const RecommendedBooksList = () => {
   const { page, limit, setPage } = usePagination(RecommendedBooksLimit);
@@ -40,7 +41,7 @@ const RecommendedBooksList = () => {
     <section className={css.recommendedBooks}>
       {isError && <p>Oops, something went wrong.</p>}
       <h2 className={css.recommendedBooksTitle}>Recommended</h2>
-      {isLoading && <p>Loading...</p>}
+      {isLoading && <Loader />}
       {totalPages > 0 ? (
         <>
           <Paginator setPage={setPage} page={page} totalPages={totalPages} />

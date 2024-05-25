@@ -5,6 +5,7 @@ import PrivateRoutes from 'routes/PrivateRoutes';
 import { selectAuthIsLoading } from '../redux/auth/authSelectors';
 import { fetchCurrentThunk } from '../redux/auth/authOperations';
 import { useAuth } from 'hooks/useAuth';
+import { Loader } from './Loader/Loader';
 
 export const App = () => {
   const [isFirstRender, setIsFirstRender] = useState(true);
@@ -18,7 +19,7 @@ export const App = () => {
   }, [dispatch]);
 
   const isLoading = isAuthLoading || isRefreshing;
-  if (isLoading) return <h2>LOADING...</h2>;
+  if (isLoading) return <Loader />;
 
   const isNotAuth =
     !isFirstRender && !isLoggedIn && !isAuthLoading && !isRefreshing;
