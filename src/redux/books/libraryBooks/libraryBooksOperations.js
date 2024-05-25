@@ -1,17 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'services/axios';
 
-// export const getLibraryBooksThunk = createAsyncThunk(
-//   'books/own',
-//   async (_, thunkAPI) => {
-//     try {
-//       const { data } = await axios.get('books/own');
-//       return data;
-//     } catch (error) {
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   }
-// );
 export const getLibraryBooksThunk = createAsyncThunk(
   'books/own',
   async (credentials, thunkAPI) => {

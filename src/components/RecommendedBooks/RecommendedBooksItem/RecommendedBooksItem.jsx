@@ -5,6 +5,8 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import UniversalButton from 'components/reUseComponents/UniversalButton/UniversalButton';
 import { addLibraryBooksThunk } from '../../../redux/books/libraryBooks/libraryBooksOperations';
+import { toast } from 'react-toastify';
+import { styleToastify } from '../../Toaster/tostify';
 
 const RecommendedBooksItem = ({ book }) => {
   const dispatch = useDispatch();
@@ -33,7 +35,10 @@ const RecommendedBooksItem = ({ book }) => {
           <BookInfoComponent book={book} />
           <UniversalButton
             title={'Add to library'}
-            btnFunction={() => dispatch(addLibraryBooksThunk(_id))}
+            btnFunction={() => {
+              dispatch(addLibraryBooksThunk(_id));
+              toast.success('Book added to library', styleToastify);
+            }}
           />
         </Modal>
       )}

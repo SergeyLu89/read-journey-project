@@ -7,6 +7,8 @@ import { useDispatch } from 'react-redux';
 import { createLibraryBooksThunk } from '../../../redux/books/libraryBooks/libraryBooksOperations';
 import Modal from 'components/reUseComponents/Modal/Modal';
 import SuccesNotification from 'components/MyLibraryBooks/SuccesNotification/SuccesNotification';
+import { toast } from 'react-toastify';
+import { styleToastify } from '../../Toaster/tostify';
 
 const schema = Yup.object({
   title: Yup.string().required('Book title is a required field'),
@@ -41,8 +43,8 @@ const MyLibraryForm = () => {
       reset();
       openModal();
     } catch (error) {
+      toast.error(`${error.message}`, styleToastify);
       console.error(error);
-      alert(error.message);
     }
   };
 

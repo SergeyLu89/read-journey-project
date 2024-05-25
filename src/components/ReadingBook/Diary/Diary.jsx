@@ -61,7 +61,6 @@ const DiaryItem = ({ day, sprints, totalPages, bookId }) => {
   if (sprints.length === 1 && sprints[0].status === 'active') {
     return null;
   }
-  console.log('sprints: ', sprints);
   const readPages = getLastReadPage(sprints, totalPages);
 
   return (
@@ -97,9 +96,7 @@ const DiaryItem = ({ day, sprints, totalPages, bookId }) => {
 
 const Diary = ({ book }) => {
   const { totalPages, progress } = book;
-
   const diaryList = sortByDate(progress);
-  console.log('diaryList: ', diaryList);
 
   return (
     <section className={css.diary}>

@@ -143,17 +143,11 @@ const RegisterForm = () => {
           )}
           {errors?.password && (
             <>
-              {/* <svg className={css.inputSvg}>
-                <use href={sprite + '#icon-error'}></use>
-              </svg> */}
               <p className={css.errorMessage}>{errors.password?.message}</p>
             </>
           )}
           {dirtyFields.password && !errors.password && (
             <>
-              {/* <svg className={css.inputSvg}>
-                <use href={sprite + '#icon-check'}></use>
-              </svg> */}
               <p className={css.correctMessage}>Password is secure</p>
             </>
           )}

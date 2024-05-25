@@ -53,8 +53,8 @@ const readingBookSlice = createSlice({
         isAnyOf(
           getRedingBookThunk.pending,
           startReadingThunk.pending,
-          finishReadingThunk.pending
-          // removeReadingThunk.pending
+          finishReadingThunk.pending,
+          removeReadingThunk.pending
         ),
         handlePending
       )
@@ -63,8 +63,8 @@ const readingBookSlice = createSlice({
         isAnyOf(
           getRedingBookThunk.rejected,
           startReadingThunk.rejected,
-          finishReadingThunk.rejected
-          // removeReadingThunk.rejected
+          finishReadingThunk.rejected,
+          removeReadingThunk.rejected
         ),
         handleRejected
       ),

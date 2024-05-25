@@ -10,6 +10,8 @@ import {
 import { useState } from 'react';
 import Modal from 'components/reUseComponents/Modal/Modal';
 import { booksPng } from 'assets/images/defaultImages/defaultImages';
+import { toast } from 'react-toastify';
+import { styleToastify } from '../../Toaster/tostify';
 
 const AddReadingForm = ({ book }) => {
   const [isFirstRender, setIsFirstRender] = useState(true);
@@ -55,14 +57,17 @@ const AddReadingForm = ({ book }) => {
       if (isAct) {
         await dispatch(finishReadingThunk(sentData));
         setIsActive(false);
+        toast.success('Reading finish', styleToastify);
         if (page === totalPages) {
           openModal();
         }
       } else {
         await dispatch(startReadingThunk(sentData));
         setIsActive(true);
+        toast.success('Reading started', styleToastify);
       }
     } catch (error) {
+      toast.error('Oops, something went wrong', styleToastify);
       console.error(error);
     } finally {
       setIsFirstRender(false);

@@ -29,7 +29,6 @@ const LoginForm = () => {
   } = useForm({ mode: 'onChange', resolver: yupResolver(schema) });
 
   const onSubmit = data => {
-    console.log(data);
     dispatch(logInThunk(data));
   };
 

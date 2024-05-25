@@ -52,7 +52,6 @@ export const authSlice = createSlice({
       })
       .addCase(logInThunk.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        console.log(payload.user);
         state.user = { name: payload.name, email: payload.email };
         state.accessToken = payload.token;
         state.refreshToken = payload.refreshToken;

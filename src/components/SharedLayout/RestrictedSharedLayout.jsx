@@ -1,7 +1,6 @@
 import Container from 'components/Container/Container';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-// import { TostBox } from '../reUseComponents/Toast';
 
 const RestrictedSharedLayout = () => {
   return (
@@ -9,7 +8,6 @@ const RestrictedSharedLayout = () => {
       <Suspense fallback={'Loading...'}>
         <Outlet />
       </Suspense>
-      {/* <TostBox /> */}
     </Container>
   );
 };

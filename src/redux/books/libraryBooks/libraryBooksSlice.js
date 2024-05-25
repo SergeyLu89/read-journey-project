@@ -1,7 +1,4 @@
 import { createSlice, isAnyOf } from '@reduxjs/toolkit';
-// import { persistReducer } from 'redux-persist';
-// import storage from 'redux-persist/lib/storage';
-
 import {
   getLibraryBooksThunk,
   addLibraryBooksThunk,
@@ -74,14 +71,4 @@ const libraryBooksSlice = createSlice({
       ),
 });
 
-// const libraryConfig = {
-//   key: 'library',
-//   storage,
-//   whitelist: ['libraryBooks'],
-// };
-
-// export const libraryReducer = persistReducer(
-//   libraryConfig,
-//   libraryBooksSlice.reducer
-// );
 export const libraryReducer = libraryBooksSlice.reducer;

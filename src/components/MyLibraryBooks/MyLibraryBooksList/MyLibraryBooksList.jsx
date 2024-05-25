@@ -11,6 +11,8 @@ import {
 import MyLibraryBooksItem from '../MyLibraryBooksItem/MyLibraryBooksItem';
 import BaseFilter from 'components/Forms/BaseFilter/BaseFilter';
 import { Loader } from 'components/Loader/Loader';
+import { toast } from 'react-toastify';
+import { styleToastify } from 'components/Toaster/tostify';
 
 const options = [
   { value: 'unread', label: 'Unread' },
@@ -38,6 +40,7 @@ const MyLibraryBooksList = () => {
 
         await dispatch(getLibraryBooksThunk(searchParams)).unwrap();
       } catch (error) {
+        toast.error(`${error.message}`, styleToastify);
         console.error(error);
       }
     })();

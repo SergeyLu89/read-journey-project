@@ -18,7 +18,6 @@ const favoritesSlice = createSlice({
       .addCase(getRecommended.fulfilled, (state, { payload }) => {
         state.isLoading = false;
         state.recommended = payload.results;
-        console.log('payload: ', payload);
         state.totalPages = payload.totalPages;
       })
       .addCase(getRecommended.rejected, (state, { payload }) => {

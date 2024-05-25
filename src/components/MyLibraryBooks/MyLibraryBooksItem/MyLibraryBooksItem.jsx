@@ -8,6 +8,8 @@ import UniversalButton from 'components/reUseComponents/UniversalButton/Universa
 import { removeLibraryBooksThunk } from '../../../redux/books/libraryBooks/libraryBooksOperations';
 import { defaultImageBookSmallPng } from 'assets/images/defaultImages/defaultImages';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { styleToastify } from 'components/Toaster/tostify';
 
 const MyLibraryBooksItem = ({ book }) => {
   const { author, imageUrl, title, _id } = book;
@@ -47,6 +49,7 @@ const MyLibraryBooksItem = ({ book }) => {
             className={css.deleteBtn}
             onClick={() => {
               dispatch(removeLibraryBooksThunk(_id));
+              toast.success('The book was removed', styleToastify);
             }}
           >
             <svg width="14" height="14" aria-label="trash icon">

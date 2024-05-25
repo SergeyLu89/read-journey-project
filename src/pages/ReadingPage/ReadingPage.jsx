@@ -18,7 +18,6 @@ const ReadingPage = () => {
   const location = useLocation();
   const bookId = location.state?.bookId;
   const book = useSelector(selectReadingBook);
-  console.log('book: ', book);
   const isLoading = useSelector(selectReadingIsLoading);
   const dispatch = useDispatch();
 
