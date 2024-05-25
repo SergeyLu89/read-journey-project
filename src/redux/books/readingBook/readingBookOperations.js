@@ -34,3 +34,14 @@ export const finishReadingThunk = createAsyncThunk(
     }
   }
 );
+export const removeReadingThunk = createAsyncThunk(
+  'books/reading/remove',
+  async (credentials, thunkAPI) => {
+    try {
+      const { data } = await axios.delete(`/books/reading?${credentials}`);
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

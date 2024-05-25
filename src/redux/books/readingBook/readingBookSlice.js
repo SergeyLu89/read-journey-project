@@ -4,6 +4,7 @@ import {
   getRedingBookThunk,
   startReadingThunk,
   finishReadingThunk,
+  removeReadingThunk,
 } from './readingBookOperations';
 
 const handlePending = state => {
@@ -43,11 +44,17 @@ const readingBookSlice = createSlice({
         state.isLoading = false;
         state.error = false;
       })
+      .addCase(removeReadingThunk.fulfilled, (state, { payload }) => {
+        state.readingBook = payload;
+        state.isLoading = false;
+        state.error = false;
+      })
       .addMatcher(
         isAnyOf(
           getRedingBookThunk.pending,
           startReadingThunk.pending,
           finishReadingThunk.pending
+          // removeReadingThunk.pending
         ),
         handlePending
       )
@@ -57,6 +64,7 @@ const readingBookSlice = createSlice({
           getRedingBookThunk.rejected,
           startReadingThunk.rejected,
           finishReadingThunk.rejected
+          // removeReadingThunk.rejected
         ),
         handleRejected
       ),

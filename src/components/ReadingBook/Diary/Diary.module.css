@@ -1,0 +1,203 @@
+.diary h3 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+.dairyList {
+  display: flex;
+  flex-direction: column;
+  max-height: 211px;
+  overflow: scroll;
+  background-color: var(--secondary-bg-color);
+  border-radius: 12px;
+}
+
+.dairyList li:first-child .date {
+  color: var(--main-text-color);
+}
+.dairyList li:first-child .dairyListItemSvg {
+  fill: var(--main-text-color);
+}
+.diaryItem {
+  padding: 16px;
+}
+.diaryWrapper {
+  position: relative;
+}
+.diaryWrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 7px;
+  width: 2px;
+  height: 100%;
+  background-color: var(--main-bg-color);
+}
+
+.svgWrapper {
+  display: flex;
+  position: relative;
+}
+.dairyListItemSvg {
+  width: 16px;
+  height: 16px;
+  fill: var(--secondary-text-color);
+}
+.diaryHeader {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 16px;
+}
+.diaryDate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.date {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 133%;
+  letter-spacing: 0.02em;
+  color: var(--secondary-text-color);
+}
+.pageRead {
+  font-size: 12px;
+  line-height: 133%;
+  letter-spacing: -0.02em;
+  color: var(--secondary-text-color);
+}
+.sprintList {
+  padding-left: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.sprintItem {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.totalPercentage {
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+.minuteDifference {
+  font-size: 10px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  color: var(--secondary-text-color);
+}
+.graphWrapper {
+  display: flex;
+  gap: 6px;
+}
+.graphBox {
+  width: 43px;
+}
+.graphImg {
+  margin-bottom: 7px;
+}
+.speed {
+  font-size: 10px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  color: var(--secondary-text-color);
+}
+
+.deleteBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  margin-top: 2px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  stroke: var(--secondary-text-color);
+  transition: stroke var(--general-transition);
+}
+.deleteBtn:hover,
+.deleteBtn:focus {
+  stroke: #e90516;
+}
+.deleteSvg {
+  width: 14px;
+  height: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .diary h3 {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  .dairyList {
+    width: 321;
+    max-height: 252px;
+  }
+  .diaryWrapper::before {
+    left: 8px;
+  }
+  .dairyListItemSvg {
+    width: 20px;
+    height: 20px;
+  }
+  .diaryHeader {
+    gap: 10px;
+  }
+  .date {
+    font-size: 16px;
+    line-height: 112%;
+  }
+  .pageRead {
+    font-size: 14px;
+    line-height: 129%;
+  }
+  .sprintList {
+    padding-left: 30px;
+    gap: 14px;
+  }
+  .totalPercentage {
+    font-size: 20px;
+    line-height: 100%;
+    margin-bottom: 8px;
+  }
+  .minuteDifference {
+    font-size: 12px;
+    line-height: 117%;
+  }
+  .graphWrapper {
+    gap: 10px;
+  }
+  .graphBox {
+    width: 59px;
+  }
+  .speed {
+    font-size: 12px;
+    line-height: 117%;
+  }
+  .deleteBtn {
+    margin-top: 6px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .diary h3 {
+    margin-bottom: 20px;
+  }
+  .dairyList {
+    width: 313;
+    max-height: 373px;
+  }
+  .sprintList {
+    gap: 28px;
+  }
+  .graphWrapper {
+    gap: 8px;
+  }
+}
