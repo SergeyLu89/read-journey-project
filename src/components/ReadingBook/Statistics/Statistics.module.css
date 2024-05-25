@@ -27,11 +27,6 @@
   margin-bottom: 20px;
 }
 
-/* @property --p {
-  syntax: '<number>';
-  inherits: true;
-  initial-value: 0;
-} */
 .pie {
   position: relative;
   display: inline-grid;
@@ -113,6 +108,7 @@
 
 @media screen and (min-width: 768px) and (max-width: 1439.9px) {
   .statisticsBlok h3 {
+    font-size: 20px;
     margin-bottom: 16px;
   }
   .chartWrapper {
