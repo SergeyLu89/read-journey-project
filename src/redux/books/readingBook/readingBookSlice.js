@@ -32,13 +32,13 @@ const readingBookSlice = createSlice({
         state.error = false;
       })
       .addCase(startReadingThunk.fulfilled, (state, { payload }) => {
-        // state.readingBook = payload;
+        state.readingBook = payload;
         state.isWhileReading = true;
         state.isLoading = false;
         state.error = false;
       })
       .addCase(finishReadingThunk.fulfilled, (state, { payload }) => {
-        // state.readingBook = payload;
+        state.readingBook = payload;
         state.isWhileReading = false;
         state.isLoading = false;
         state.error = false;

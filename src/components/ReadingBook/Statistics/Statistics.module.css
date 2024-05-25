@@ -1,0 +1,153 @@
+.statisticsBlok h3 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+.statisticsDescr {
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  color: var(--secondary-text-color);
+  width: 293px;
+  margin-bottom: 20px;
+  display: none;
+}
+.chartWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: var(--secondary-bg-color);
+}
+.chartBox {
+  margin-bottom: 20px;
+}
+
+/* @property --p {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+} */
+.pie {
+  position: relative;
+  display: inline-grid;
+  place-content: center;
+  width: var(--w);
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.11111;
+  letter-spacing: -0.02em;
+  color: var(--main-text-color);
+
+  --b: 10px;
+  --c: #30b94d;
+  --p: var(--p);
+  --w: 116px;
+  aspect-ratio: 1;
+  animation: p 1s 0.5s both;
+}
+.pie:before,
+.pie:after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+}
+
+.pie:before {
+  inset: 0;
+  background: radial-gradient(farthest-side, var(--c) 98%, #0000) top/var(--b)
+      var(--b) no-repeat,
+    conic-gradient(var(--c) calc(var(--p) * 1%), #0000 0),
+    conic-gradient(
+      var(--main-bg-color) calc(100% - var(--p) * 1%),
+      var(--main-bg-color) 0
+    );
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    #0000 calc(99% - var(--b)),
+    #000 calc(100% - var(--b))
+  );
+  mask: radial-gradient(
+    farthest-side,
+    #0000 calc(99% - var(--b)),
+    #000 calc(100% - var(--b))
+  );
+}
+.pie:after {
+  inset: calc(50% - var(--b) / 2);
+  background: var(--c);
+  transform: rotate(calc(var(--p) * 3.6deg))
+    translateY(calc(50% - var(--w) / 2));
+}
+.pieDescriptionBox {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 15px;
+}
+.colorBox {
+  width: 14px;
+  height: 14px;
+  background-color: #30b94d;
+  border-radius: 4px;
+}
+.pieDescription span {
+  font-size: 14px;
+  line-height: 129%;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+.pieDescription p {
+  font-size: 10px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: var(--secondary-text-color);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439.9px) {
+  .statisticsBlok h3 {
+    margin-bottom: 16px;
+  }
+  .chartWrapper {
+    padding: 28px;
+  }
+  .chartBox {
+    margin-bottom: 16px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .pie {
+    --w: 136px;
+    --b: 12px;
+
+    font-size: 20px;
+    line-height: 1;
+  }
+  .pieDescription span {
+    font-size: 20px;
+    line-height: 100%;
+    margin-bottom: 8px;
+  }
+  .pieDescription p {
+    font-size: 12px;
+    line-height: 117%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .statisticsDescr {
+    display: block;
+  }
+  .pie {
+    --w: 168px;
+    --b: 15px;
+  }
+}
