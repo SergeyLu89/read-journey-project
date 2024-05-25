@@ -8,11 +8,21 @@ import {
   startReadingThunk,
 } from '../../../redux/books/readingBook/readingBookOperations';
 import { useState } from 'react';
+import Modal from 'components/reUseComponents/Modal/Modal';
+import { booksPng } from 'assets/images/defaultImages/defaultImages';
 
 const AddReadingForm = ({ book }) => {
   const [isFirstRender, setIsFirstRender] = useState(true);
   const { _id, totalPages, progress } = book;
   const dispatch = useDispatch();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+  const closeModal = () => {
+    setIsOpen(false);
+  };
 
   const isBookFirstRender = progress
     .map(point => point.status)
@@ -45,6 +55,9 @@ const AddReadingForm = ({ book }) => {
       if (isAct) {
         await dispatch(finishReadingThunk(sentData));
         setIsActive(false);
+        if (page === totalPages) {
+          openModal();
+        }
       } else {
         await dispatch(startReadingThunk(sentData));
         setIsActive(true);
@@ -92,6 +105,18 @@ const AddReadingForm = ({ book }) => {
           {isAct ? 'To stop' : 'To start'}
         </button>
       </form>
+      {isOpen && (
+        <Modal isOpen={isOpen} closeFnc={closeModal}>
+          <div className={css.bookIsReadBox}>
+            <img src={booksPng} alt="books" className={css.booksImg} />
+            <h3>The book is read</h3>
+            <p className={css.description}>
+              It was an <span>exciting journey</span>, where each page revealed
+              new horizons, and the characters became inseparable friends.
+            </p>
+          </div>
+        </Modal>
+      )}
     </section>
   );
 };
