@@ -13,6 +13,8 @@
 }
 .recommendedBooksList {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 21px;
 }
@@ -56,7 +58,7 @@
   }
   .recommendedBooksList {
     column-gap: 25px;
-    grid-row: 27px;
+    row-gap: 27px;
   }
   .noContentBox {
     width: 274px;
